@@ -43,4 +43,7 @@ for tmp in c:
 
 for i in range(1,3):
     print(a[i])
-    
+
+'''
+break 跳出循环；continue 结束本次循环
+'''

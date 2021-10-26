@@ -28,6 +28,7 @@ def computer(mode):
         return lambda a,b : a+b
     if(mode == "-"):
         return lambda a,b : a-b
+#返回的是匿名函数        
 f = computer("+")
 print("add :%s"% f(1, 2))
 '''

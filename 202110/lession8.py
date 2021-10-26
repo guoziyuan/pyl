@@ -46,7 +46,7 @@ else:
     print("不是成年人")
 
 a = 100
-b = 80
+b = -80
 
 if a >= 0 or b >= 0 :
     print("有非负数")

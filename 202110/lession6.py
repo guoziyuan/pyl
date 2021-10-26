@@ -21,4 +21,5 @@ a["小明"] = 30
 print(a)
 
 del a["张三"]
+
 print(a)

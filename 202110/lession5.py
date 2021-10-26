@@ -26,3 +26,5 @@ print(c)
 d = b * 5
 
 print(d)
+
+del a

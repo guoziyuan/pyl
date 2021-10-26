@@ -19,6 +19,8 @@ import math
 
 print(math.cos(90))
 print(math.exp(2))
+
+
 import random
 #范围内取一个随机数
 for data in range(1,10):
