@@ -14,6 +14,10 @@ import unittest
 
 class TestAdd(unittest.TestCase):
 
+    def setUp(self) -> None:
+        print("test start")
+        return super().setUp()
+
     def test_add1(self):
         r1 = add(1, 1)
         self.assertEqual(r1, 2)
@@ -26,5 +30,9 @@ class TestAdd(unittest.TestCase):
         r3 = add(-1, 12)
         self.assertEqual(r3, 0)
     
+    def tearDown(self) -> None:
+        print("test end")
+        return super().tearDown()
+        
 if __name__=="__main__":
     unittest.main()
