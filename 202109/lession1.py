@@ -6,13 +6,13 @@ Unix系统中，提供fock()函数，可以复制一个子进程，然后分别�
 '''
 import os
 
-print("pid : %s" % os.getpid())
-# windows 上没有fork
-pid = os.fork()
-if pid == 0:
-    print("子进程返回，子进程id：%s， 父进程id：%s" % (os.getpid(), os.getppid()))
-else:
-    print("父进程返回，子进程id：%s， 父进程id：%s" % (pid, os.getpid()))
+# print("pid : %s" % os.getpid())
+# # windows 上没有fork
+# pid = os.fork()
+# if pid == 0:
+#     print("子进程返回，子进程id：%s， 父进程id：%s" % (os.getpid(), os.getppid()))
+# else:
+#     print("父进程返回，子进程id：%s， 父进程id：%s" % (pid, os.getpid()))
 
 # 有些操作系统不支持fork()，Python 提供了multiprocessing库
 from multiprocessing import Process
@@ -30,7 +30,6 @@ if __name__ == '__main__':
     # 启动子进程
     print("start")
     p.start()
-
     # 等待子进程执行结束
     p.join()
     print("end")
