@@ -2,6 +2,9 @@
 
 '''
 异常处理
+
+assert，和print()相比也好不到哪去。不过，启动Python解释器时可以用-O参数来关闭assert：
+
 '''
 
 try:
@@ -22,9 +25,13 @@ finally:
 3、断点调试
 '''
 
+import logging
+
 def divide(a, b):
     if b == 0 :
         print("除数为0！")
+        #写入日志
+        logging.error("除数为0！")
     assert b!=0 , "除数为0"
     return a/b
 
