@@ -34,12 +34,27 @@ async def read_file(file_name):
     print("end read_file ", threading.currentThread().name)
 
 
+async def wget(host):
+    conn = asyncio.open_connection(host, 80)
+    reader, writer = await conn
+    header = 'GET / HTTP/1.0\r\nHost: %s\r\n\r\n' % host
+    writer.write(header.encode('utf-8'))
+    await writer.drain()
+    while True:
+        line = await reader.readline()
+        if line == b'\r\n':
+            break
+        print('%s header > %s' % (host, line.decode('utf-8').rstrip()))
+        # Ignore the body, close the socket
+    writer.close()
+
+
 if __name__ == "__main__":
     # 获得eventloop
     loop = asyncio.get_event_loop()
 
     # coroutine 任务队列
-    task = [hello_word(), read_file("6.txt"), hello_word()]
+    task = [hello_word(), read_file("6.txt"), wget("www.sina.com.cn")]
     loop.run_until_complete(asyncio.wait(task))
     print("run ", threading.currentThread().name)
     # 关闭loop
