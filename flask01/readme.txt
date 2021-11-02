@@ -24,3 +24,19 @@ source /usr/local/bin/virtualenvwrapper.sh
 复制环境：cpvirtualenv env1 env2
 删除环境：rmvirtualenv env1
 退出虚拟环境：deactivate
+
+基本项目结构
+   static ==》html、css、js
+   template ==》模板
+
+
+运行，
+flask run  //监听127.0.0.1
+flask run --host=0.0.0.0 //操作系统监听所有公开的 IP,外网可以访问
+
+开启调试模式,调试模式下，文件修改会被重新加载，刷新流浪器可以得到最新代码结果
+
+export FLASK_ENV=development
+export FLASK_DEBUG=1
+
+
